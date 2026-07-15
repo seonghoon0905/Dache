@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>DaChe</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div style="display: flex; gap: 50px;">
+        <!-- 왼쪽: 존댓말 반말 변환기 -->
+        <div style="flex: 1;">
+            <h1>DaChe</h1>
+            
+            <div>
+                <textarea id="input" rows="20" style="width: 100%;" placeholder="텍스트를 입력하세요"></textarea>
+            </div>
+            
+            <br>
+            <button id="convert" style="font-size: 20px; padding: 10px;">변환하기</button>
+            <br><br>
+
+            <div>
+                <textarea id="output" rows="20" style="width: 100%;" readonly></textarea>
+            </div>
+            
+            <br>
+            <button id="copy" style="font-size: 20px; padding: 10px;">복사하기</button>
+        </div>
+
+        <!-- 오른쪽: 줄바꿈 제거기 -->
+        <div style="flex: 1;">
+            <h1>줄바꿈 제거기</h1>
+            
+            <div>
+                <textarea id="lb-input" rows="20" style="width: 100%;" placeholder="줄바꿈을 제거할 텍스트를 입력하세요"></textarea>
+            </div>
+            
+            <br>
+            <button id="lb-convert" style="font-size: 20px; padding: 10px;">줄바꿈 제거하기</button>
+            <br><br>
+
+            <div>
+                <textarea id="lb-output" rows="20" style="width: 100%;" readonly></textarea>
+            </div>
+            
+            <br>
+            <button id="lb-copy" style="font-size: 20px; padding: 10px;">복사하기</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
