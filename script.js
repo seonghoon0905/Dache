@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const adjRegex = new RegExp(`(${adjectives})합니다([.,!?~;:"'\\s]|$)`, 'g');
 
         // 2-2. 일반 동사 예외 사전 (습니다 -> 는다 로 변환)
-        const verbs = '먹|받|읽|찾|입|벗|신|닫|믿|묻|걷|얻|잃|앉|잡|웃|씻|닦|찍|깎|볶|섞|꺾|겪|묶|묵|죽|썩|속|숨|넘|남|담|닮|늙|밟|핥|뽑|씹|업|접|집|쫓|맞|붙|쏟|뻗|안|얹|끊|끓|굶|곯|달|뚫';
+        const verbs = '먹|받|읽|찾|입|벗|신|닫|믿|묻|걷|얻|잃|앉|잡|웃|씻|닦|찍|깎|볶|섞|꺾|겪|묶|묵|죽|썩|속|숨|넘|남|담|닮|늙|밟|핥|뽑|씹|업|접|집|쫓|맞|붙|쏟|뻗|안|얹|끊|끓|굶|곯|달|뚫|않';
         const verbRegex = new RegExp(`(${verbs})습니다([.,!?~;:"'\\s]|$)`, 'g');
         result = result.replace(verbRegex, '$1는다$2');
         // 3. 평서문 '니다' 형태
@@ -60,6 +60,14 @@ document.addEventListener('DOMContentLoaded', () => {
             { pattern: /웁니다([.,!?~;:"'\s]|$)/g, replace: '운다$1' },
             { pattern: /놉니다([.,!?~;:"'\s]|$)/g, replace: '논다$1' },
             { pattern: /깁니다([.,!?~;:"'\s]|$)/g, replace: '긴다$1' },
+            { pattern: /부릅니다([.,!?~;:"'\s]|$)/g, replace: '부른다$1' },
+            { pattern: /오릅니다([.,!?~;:"'\s]|$)/g, replace: '오른다$1' },
+            { pattern: /모릅니다([.,!?~;:"'\s]|$)/g, replace: '모른다$1' },
+            { pattern: /흐릅니다([.,!?~;:"'\s]|$)/g, replace: '흐른다$1' },
+            { pattern: /고릅니다([.,!?~;:"'\s]|$)/g, replace: '고른다$1' },
+            { pattern: /빠릅니다([.,!?~;:"'\s]|$)/g, replace: '빠르다$1' },
+            { pattern: /다릅니다([.,!?~;:"'\s]|$)/g, replace: '다르다$1' },
+            { pattern: /바릅니다([.,!?~;:"'\s]|$)/g, replace: '바르다$1' },
             { pattern: /지닙니다([.,!?~;:"'\s]|$)/g, replace: '지닌다$1' },
             { pattern: /거칩니다([.,!?~;:"'\s]|$)/g, replace: '거친다$1' },
             { pattern: /이릅니다([.,!?~;:"'\s]|$)/g, replace: '이른다$1' },
