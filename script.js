@@ -234,8 +234,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     spaceConvertBtn.addEventListener('click', () => {
         const text = spaceInputElement.value;
-        // 연속된 공백(스페이스)을 단일 공백으로 치환 (줄바꿈은 유지)
-        spaceOutputElement.value = text.replace(/ {2,}/g, ' ');
+        // 연속된 공백(일반 공백, 탭, NBSP 등)을 단일 공백으로 치환 (줄바꿈은 유지)
+        spaceOutputElement.value = text.replace(/[^\S\r\n]{2,}/g, ' ');
     });
 
     spaceCopyBtn.addEventListener('click', () => {
