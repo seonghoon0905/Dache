@@ -225,4 +225,27 @@ document.addEventListener('DOMContentLoaded', () => {
             alert('복사 실패!');
         });
     });
+
+    // 띄어쓰기 표준화 로직
+    const spaceInputElement = document.getElementById('space-input');
+    const spaceOutputElement = document.getElementById('space-output');
+    const spaceConvertBtn = document.getElementById('space-convert');
+    const spaceCopyBtn = document.getElementById('space-copy');
+
+    spaceConvertBtn.addEventListener('click', () => {
+        const text = spaceInputElement.value;
+        // 연속된 공백(스페이스)을 단일 공백으로 치환 (줄바꿈은 유지)
+        spaceOutputElement.value = text.replace(/ {2,}/g, ' ');
+    });
+
+    spaceCopyBtn.addEventListener('click', () => {
+        const textToCopy = spaceOutputElement.value;
+        if (!textToCopy) return;
+        
+        navigator.clipboard.writeText(textToCopy).then(() => {
+            alert('복사되었습니다.');
+        }).catch(err => {
+            alert('복사 실패!');
+        });
+    });
 });
